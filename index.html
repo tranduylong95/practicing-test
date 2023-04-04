@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Bai 1
+    function valueFirstDegreeEquation(a,b){
+        if(a==0){
+            if(b==0)
+                console.log("Phương trình có vô số nghiệm");
+            else 
+                console.log("Phương trình vô nghiệm");    
+        }
+        else 
+            console.log(`Phương trình có 1 nghiệm:${-b/a}`);  
+    }
+    valueFirstDegreeEquation(0,0);
+    // Bai 2
+    function findPositionIndex(value,array){
+        let index=-1;
+        for(let i = 0;i<array.length;i++){
+            if(value===array[i]) return index=i+1;
+        }
+        return index;
+    }
+    let array=[2,3,4,5,6];
+    let value=0;
+    findPositionIndex(value,array)==-1? console.log("Giá trị không tồn tại trong array"):console.log(`Vị trí trong array là :${findPositionIndex(value,array)}`);
+    // Bài 3
+    function countCharacters(arrayChar){
+        const arrayVowel=["a","o","e","u","i"];
+        let count=0;
+        for(let i =0;i<arrayChar.length;i++){
+            for(let j=0;j<arrayVowel.length;j++){
+                if(arrayChar[i]==arrayVowel[j]){
+                    count++;
+                    break;
+                }
+            }
+        }
+        if(count==0) return false;
+        else return count;
+    }
+    let arrayChar =["e","e","k"];
+    let countVowel=countCharacters(arrayChar);
+    console.log(countVowel);
+    // Bài 4
+    class Animal{
+        name;
+        weight;
+        create(name,weight){
+            this.name=name;
+            this.weight=weight;
+        }
+        setName(name){
+             this.name=name;
+        }
+        setWeight(weight){
+             this.weight=weight;
+        }
+        getName(){
+            return this.name;
+        }
+        getWeight(){
+             return this.weight;
+        }
+        toString(){
+            return `Tên:${this.getName()} Cân nặng:${this.getWeight()}`;
+        }
+    }
+    let objAnimal1= new Animal("Elephant",45.6);
+    console.log(objAnimal1.toString());
+    let objAnimal2= new Animal();
+    objAnimal2.create("Dog",15.6);
+    console.log(objAnimal2.toString());
+    objAnimal2.setName("Mouse");
+    console.log(objAnimal2.toString());
+</script>
+
+</html>
